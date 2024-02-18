@@ -10,21 +10,6 @@ namespace many_to_one_events
             {
                 // Multiple subscription to the `Enter` event
                 numericUpDown.Enter += Any_NumericControlEnter;
-
-                // Multiple inline subscription to the `MouseEnter` event using a lambda
-                numericUpDown.MouseEnter += (sender, e) =>
-                { 
-                    if(sender is Control control)
-                    {
-                        switch(control.Name)
-                        {
-                            case nameof(numericUpDown1): richTextBox.SelectionColor = Color.Green; break;
-                            case nameof(numericUpDown2): richTextBox.SelectionColor = Color.Blue; break;
-                            case nameof(numericUpDown3): richTextBox.SelectionColor = Color.Maroon; break;
-                        }
-                        BeginInvoke(()=>richTextBox.AppendText($"MouseEnter {control.Name}{Environment.NewLine}"));
-                    }
-                };
             }
         }
 
