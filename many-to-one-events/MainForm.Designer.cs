@@ -49,16 +49,20 @@
             // 
             // numericUpDown1
             // 
+            numericUpDown1.DecimalPlaces = 1;
             numericUpDown1.Font = new Font("Segoe UI", 14F);
             numericUpDown1.Location = new Point(80, 66);
             numericUpDown1.Name = "numericUpDown1";
             numericUpDown1.Size = new Size(139, 45);
             numericUpDown1.TabIndex = 1;
             numericUpDown1.TextAlign = HorizontalAlignment.Center;
+            numericUpDown1.ThousandsSeparator = true;
             // 
             // numericUpDown2
             // 
+            numericUpDown2.DecimalPlaces = 1;
             numericUpDown2.Font = new Font("Segoe UI", 14F);
+            numericUpDown2.Increment = new decimal(new int[] { 5, 0, 0, 65536 });
             numericUpDown2.Location = new Point(80, 117);
             numericUpDown2.Name = "numericUpDown2";
             numericUpDown2.Size = new Size(139, 45);
@@ -67,6 +71,7 @@
             // 
             // numericUpDown3
             // 
+            numericUpDown3.DecimalPlaces = 1;
             numericUpDown3.Font = new Font("Segoe UI", 14F);
             numericUpDown3.Location = new Point(80, 168);
             numericUpDown3.Name = "numericUpDown3";

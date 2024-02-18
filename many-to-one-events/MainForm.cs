@@ -15,17 +15,21 @@ namespace many_to_one_events
 
         private void Any_NumericControlEnter(object? sender, EventArgs e)
         {
-            if (sender is NumericUpDown thisNumericUpDown)
+            if (sender is NumericUpDown numericUpDown)
             {
-                if (checkBoxUseBeginInvoke.Checked) BeginInvoke(() => localStyleNumericUpDownControl());
+                if (checkBoxUseBeginInvoke.Checked)
+                {
+                    BeginInvoke(() => localStyleNumericUpDownControl());
+                }
                 else localStyleNumericUpDownControl();
             }
             void localStyleNumericUpDownControl() 
             {
-                thisNumericUpDown.Select(0, $"{thisNumericUpDown.Value}".Length);
+                numericUpDown.Select(0, numericUpDown.Text.Length);
                 foreach (var any in Controls.OfType<NumericUpDown>())
                 {
-                    any.BackColor = (any == thisNumericUpDown) ? Color.Wheat : this.BackColor;
+                    any.BackColor = (any == numericUpDown) ? 
+                        Color.Wheat : this.BackColor;
                 }
             }
         }
